@@ -11,8 +11,8 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		String path = "";
-		String outpath = "";
+		String path = "C:\\Users\\mathi\\Documents\\Japonais\\Kotoba\\git\\n2.csv";
+		String outpath = "C:\\Users\\mathi\\Documents\\Japonais\\Kotoba\\git\\out\\n2";
 		try {
 			cutPack(path, outpath, 30);
 		} catch (IOException e) {
@@ -35,8 +35,8 @@ public class MainClass {
 			nbLine++;
 			text += line + "\n";
 
-			if (nbLine == nbLines + 1) {
-				nbLine -= nbLines + 1;
+			if (nbLine == nbLines) {
+				nbLine -= nbLines;
 				lines.add(text);
 				text = ",,,\n";
 			}
@@ -45,6 +45,8 @@ public class MainClass {
 		lines.add(text);
 		scan.close();
 		for (int i = 0; i < lines.size(); i++) {
+			File f1 = new File(outpath + "-part-" + i + ".csv");
+			f1.createNewFile();
 			Files.write(Paths.get(outpath + "-part-" + i + ".csv"), lines.get(i).getBytes());
 		}
 
