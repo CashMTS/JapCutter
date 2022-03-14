@@ -11,8 +11,8 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		String path = "C:\\Users\\mathi\\Documents\\Japonais\\Kotoba\\git\\n2.csv";
-		String outpath = "C:\\Users\\mathi\\Documents\\Japonais\\Kotoba\\git\\out\\n2";
+		String path = "";
+		String outpath = "";
 		try {
 			cutPack(path, outpath, 30);
 		} catch (IOException e) {
